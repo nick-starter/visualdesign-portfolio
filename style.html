@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Design System — NJ Child</title>
+<meta name="description" content="The design system behind the NJ Child portfolio: colour, typography, spacing, components and motion." />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<meta name="theme-color" content="#E3EAEC" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+/* ---- page-only additions for the style guide ---- */
+.sg-sec{padding:clamp(44px,6vw,84px) 0;border-top:1px solid rgba(0,0,0,.14)}
+.sg-sec:first-of-type{border-top:0}
+.sg-label{margin-bottom:clamp(18px,2.4vw,30px)}
+
+.swatch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:clamp(12px,1.6vw,20px)}
+.swatch{border:1px solid rgba(0,0,0,.14);background:#fff}
+.swatch-chip{aspect-ratio:16/10;display:grid;place-items:end-start;padding:10px}
+.swatch-chip b{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.9);color:#000;padding:3px 7px}
+.swatch-body{padding:12px 14px 14px}
+.swatch-body strong{display:block;font-family:var(--display);text-transform:uppercase;font-size:13px;letter-spacing:.01em;margin-bottom:5px}
+.swatch-body code{font-family:var(--mono);font-size:10.5px;color:#48595a;display:block;line-height:1.7}
+
+.type-row{border-top:1px solid rgba(0,0,0,.14);padding:clamp(16px,2.2vw,26px) 0;display:grid;grid-template-columns:180px 1fr;gap:clamp(16px,2.6vw,36px);align-items:baseline}
+@media(max-width:700px){.type-row{grid-template-columns:1fr;gap:6px}}
+.type-meta{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:#718584;line-height:1.8}
+.type-sample{overflow-wrap:anywhere}
+
+.demo{border:1px solid rgba(0,0,0,.14);background:#fff;padding:clamp(20px,2.6vw,34px)}
+.demo-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.demo + .demo{margin-top:clamp(12px,1.6vw,18px)}
+.demo-cap{margin-top:16px;padding-top:12px;border-top:1px solid rgba(0,0,0,.1)}
+
+.sg-bar{display:flex;align-items:center;gap:clamp(12px,2vw,26px);flex-wrap:wrap;padding:14px 0}
+.sg-bar b{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#718584;min-width:74px}
+
+.grid-demo{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.grid-demo div{background:#fff;border:1px solid rgba(0,0,0,.14);aspect-ratio:1;display:grid;place-items:center;font-family:var(--mono);font-size:9.5px;color:#718584}
+@media(max-width:620px){.grid-demo{grid-template-columns:repeat(2,1fr)}}
+
+.ramp{display:flex;flex-wrap:wrap;gap:8px}
+.ramp span{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid rgba(0,0,0,.2);padding:7px 12px;
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav-logo" href="index.html">NJCHILD</a>
+  <nav aria-label="Primary">
+    <ul class="nav-links">
+      <li><a href="index.html">Site</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a class="on" href="style.html">Style</a></li>
+    </ul>
+  </nav>
+  <span class="px-mark" aria-hidden="true"></span>
+</header>
+
+<main>
+
+  <!-- ============ INTRO ============ -->
+  <section class="sg-sec">
+    <div class="wrap">
+      <span class="m red sg-label">(00) — Design system</span>
+      <h1 class="d">The style.</h1>
+      <p class="lede" style="margin-top:clamp(18px,2.4vw,28px);max-width:58ch">Every value on this site comes from five CSS custom properties and two type families. This page is the reference — what each token is, where it's used, and why.</p>
+    </div>
+  </section>
+
+  <!-- ============ COLOUR ============ -->
+  <section class="sg-sec">
+    <div class="wrap">
+      <div class="sg-label">
+        <span class="m red">(01) — Colour</span>
+        <h2 class="d">Three colours.</h2>
+      </div>
+
+      <div class="swatch-grid">
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#E3EAEC"><b>--bg</b></div>
+          <div class="swatch-body">
+            <strong>Canvas</strong>
+            <code>#E3EAEC</code>
+            <code>Page background. A cool grey, not white — keeps the pure-black type from vibrating and lets white cards read as raised.</code>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#000"><b style="background:#000;color:#fff">--ink</b></div>
+          <div class="swatch-body">
+            <strong>Ink</strong>
+            <code>#000000</code>
+            <code>All body and display type. Not near-black — full black is the point, it's what makes the display type cut.</code>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#FF0000"><b style="background:#fff">--red</b></div>
+          <div class="swatch-body">
+            <strong>Accent</strong>
+            <code>#FF0000</code>
+            <code>Pure red. Used once per viewport for emphasis — a number, a word, a section marker. Never for decoration, or it stops working.</code>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="swatch-chip" style="background:#fff"><b>surface</b></div>
+          <div class="swatch-body">
+            <strong>Surface</strong>
+            <code>#FFFFFF</code>
+            <code>Cards, the project rail, nav, method steps. White on grey reads as elevation without a single shadow.</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="ramp" style="margin-top:clamp(20px,2.6vw,30px)">
+        <span>--muted #718584</span>
+        <span>--line rgba(0,0,0,.14)</span>
+        <span>--line-strong rgba(0,0,0,.20)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TYPE ============ -->
+  <section class="sg-sec">
+    <div class="wrap">
+      <div class="sg-label">
+        <span class="m red">(02) — Typography</span>
+        <h2 class="d">Two voices.</h2>
+        <p class="body-copy" style="margin-top:16px;max-width:56ch">Archivo Black shouts. The monospace explains. Every heading is the first, every label and paragraph is the second — that split is what gives the site its editorial feel without any ornament.</p>
+      </div>
+
+      <h3 class="d" style="margin:clamp(26px,3.4vw,40px) 0 0">Display — Archivo Black</h3>
+      <div class="type-row">
+        <span class="type-meta">h1.d<br />17.5vw → 15.5rem<br />tracking −0.03em<br />leading 0.84</span>
+        <span class="d type-sample" style="font-size:clamp(2.6rem,9vw,6rem)">Cart flows</span>
+      </div>
+      <div class="type-row">
+        <span class="type-meta">h2.d<br />7.4vw → 6.4rem<br />tracking −0.03em</span>
+        <span class="d type-sample" style="font-size:clamp(1.6rem,5vw,3.4rem)">Track record</span>
+      </div>
+      <div class="type-row">
+        <span class="type-meta">h3.d<br />2.3vw → 1.7rem</span>
+        <span class="d type-sample" style="font-size:clamp(1.05rem,2.3vw,1.7rem)">Find the friction</span>
+      </div>
+
+      <h3 class="d" style="margin:clamp(30px,4vw,46px) 0 0">Mono — UI system</h3>
+      <div class="type-row">
+        <span class="type-meta">.m — labels<br />10.5px / 0.16em tracking<br />uppercase</span>
+        <span class="m type-sample">(02) — Portfolio</span>
+      </div>
+      <div class="type-row">
+        <span class="type-meta">.btn — buttons<br />10.5px / 0.14em<br />700 weight</span>
+        <span class="m type-sample" style="font-weight:700">See the work →</span>
+      </div>
+      <div class="type-row">
+        <span class="type-meta">.body-copy — prose<br />12.5px / 1.85 leading<br />max 62ch</span>
+        <span class="body-copy type-sample" style="max-width:52ch">Freelance ecommerce design specialist. I plug into studios and in-house teams to ship product detail pages, listings, carts and checkouts — tested, specced and ready for dev.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SPACING ============ -->
+  <section class="sg-sec">
+    <div class="wrap">
+      <div class="sg-label">
+        <span class="m red">(03) — Spacing &amp; grid</span>
+        <h2 class="d">The rhythm.</h2>
+      </div>
+
+      <div class="sg-bar"><b>--pad</b><span class="m-sm">clamp(18px, 4.5vw, 64px) — page gutter</span></div>
+      <div class="sg-bar"><b>--maxw</b><span class="m-sm">1500px — content ceiling</span></div>
+      <div class="sg-bar"><b>section</b><span class="m-sm">clamp(52px, 8vw, 104px) vertical padding</span></div>
+      <div class="sg-bar"><b>hairline</b><span class="m-sm">1px rgba(0,0,0,.14) — every divider on the site</span></div>
+
+      <div class="sg-bar"><b>breakpoints</b><span class="m-sm">980px — grids collapse to one column</span></div>
+      <div class="sg-bar"><b></b><span class="m-sm">620px — nav links shrink, stacked logos grow</span></div>
+
+      <div class="grid-demo" style="margin-top:clamp(20px,2.6vw,30px)">
+        <div>1</div><div>2</div><div>3</div><div>4</div>
+        <div>5</div><div>6</div><div>7</div><div>8</div>
+      </div>
+      <p class="m-sm" style="margin-top:12px">Project rail — 2-up on desktop, edge-bleeding, 30vw cards</p>
+    </div>
+  </section>
+
+  <!-- ============ COMPONENTS ============ -->
+  <section class="sg-sec">
+    <div class="wrap">
+      <div class="sg-label">
+        <span class="m red">(04) — Components</span>
+        <h2 class="d">The parts.</h2>
+      </div>
+
+      <div class="demo">
+        <span class="m-sm" style="display:block;margin-bottom:14px">Buttons</span>
+        <div class="demo-row">
+          <a class="btn btn-solid" href="#">Solid <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn" href="#">Outline</a>
+        </div>
+      </div>
+
+      <div class="demo">
+        <span class="m-sm" style="display:block;margin-bottom:14px">Section markers — red mono, always paired with a display heading</span>
+        <span class="m red" style="display:block">(01) — About</span>
+        <h3 class="d" style="margin-top:10px">Hello.</h3>
+      </div>
+
+      <div class="demo">
+        <span class="m-sm" style="display:block;margin-bottom:14px">Meta bar — 4 cells, hairline dividers, no vertical rules</span>
+        <dl class="meta-bar" style="margin-top:0">
+          <div><dt>Client</dt><dd>Super Retail Group</dd></div>
+          <div><dt>Role</dt><dd>UI Designer</dd></div>
+          <div><dt>Year</dt><dd>2022 — 2023</dd></div>
+          <div><dt>Scope</dt><dd>Homepage · PLP · PDP</dd></div>
+        </dl>
+      </div>
+
+      <div class="demo">
+        <span class="m-sm" style="display:block;margin-bottom:14px">Experience row — year in red, company in display</span>
+        <div class="xp" style="border-top:0">
+          <div class="xp-row">
+            <span class="xp-year">2022</span>
+            <span class="xp-co">Super Retail Group</span>
+            <span class="xp-role"><b>UI Designer</b>Rebel Sport site redesign</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo">
+        <span class="m-sm" style="display:block;margin-bottom:14px">Method step — white card, ghost numeral bleeding off the corner</span>
+        <div class="steps">
+          <div class="step">
+            <span class="step-ghost" aria-hidden="true">01</span>
+            <span class="m red step-n">(01)</span>
+            <h3 class="d">Find the friction</h3>
+            <p>I audit the funnel, analytics and session recordings. Most conversion problems are obvious once you see where people stop.</p>
+          </div>
+          <div class="step">
+            <span class="step-ghost" aria-hidden="true">02</span>
+            <span class="m red step-n">(02)</span>
+            <h3 class="d">Set the direction</h3>
+            <p>One recommendation, not five options. Sign-off before pixels exist, so the build doesn't unravel later.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo">
+        <span class="m-sm" style="display:block;margin-bottom:14px">Client logo — greyscale at 62%, full colour + red on hover. Stacked marks under 1.6:1 render taller.</span>
+        <ul class="logos" style="margin:0">
+          <li data-logo="rebel-sport"><span>Rebel Sport</span></li>
+          <li data-logo="suzuki"><span>Suzuki</span></li>
+          <li data-logo="telstra"><span>Telstra</span></li>
+          <li data-logo="langtons"><span>Langton's</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRINCIPLES ============ -->
+  <section class="sg-sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="sec-num">(05)</span>
+        <div>
+          <h2 class="d">The rules.</h2>
+          <p class="body-copy sec-sub">What holds the system together when someone else is building in it.</p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <span class="m red step-n">(01)</span>
+          <h3 class="d">One red per screen</h3>
+          <p>The accent marks a single focal point per viewport. Two red elements and the eye stops knowing where to look.</p>
+        </div>
+        <div class="step">
+          <span class="m red step-n">(02)</span>
+          <h3 class="d">Uppercase or nothing</h3>
+          <p>Display type is always uppercase. Mono labels are always uppercase. Prose is never. No in-between.</p>
+        </div>
+        <div class="step">
+          <span class="m red step-n">(03)</span>
+          <h3 class="d">Hairlines, not shadows</h3>
+          <p>Separation comes from a 1px line and a change of surface. The only shadow on the site is the one under the nav.</p>
+        </div>
+        <div class="step">
+          <span class="m red step-n">(04)</span>
+          <h3 class="d">Mobile is the default</h3>
+          <p>Every clamp starts at its small value. The desktop size is the concession, not the baseline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOKENS ============ -->
+  <section class="sg-sec">
+    <div class="wrap">
+      <div class="sg-label">
+        <span class="m red">(06) — Reference</span>
+        <h2 class="d">The source.</h2>
+      </div>
+      <div class="demo">
+        <pre style="font-family:var(--mono);font-size:11.5px;line-height:1.9;margin:0;overflow-x:auto">:root{
+  --bg:#E3EAEC;
+  --ink:#000;
+  --red:#FF0000;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --display:"Archivo Black","Archivo","Helvetica Neue",Arial,sans-serif;
+  --pad:clamp(18px,4.5vw,64px);
+  --maxw:1500px;
+}</pre>
+      </div>
+      <p class="m-sm" style="margin-top:16px">styles.css:7 — change a value here and the whole site follows</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-in">
+    <span>© 2026 NJ Child — Design System</span>
+    <ul class="foot-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#hero">Back to top ↑</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var EXTS = ['svg', 'avif', 'png', 'webp', 'jpg', 'jpeg'];
+  document.querySelectorAll('[data-logo]').forEach(function (li) {
+    var slug = li.getAttribute('data-logo');
+    (function tryAt (i) {
+      if (i >= EXTS.length) return;
+      var img = new Image();
+      img.alt = '';
+      img.onload = function () {
+        li.prepend(img);
+        img.loading = 'lazy';
+        li.classList.add('has-img');
+        if (img.naturalWidth / img.naturalHeight < 1.6) li.classList.add('is-stacked');
+      };
+      img.onerror = function () { tryAt(i + 1); };
+      img.src = 'images/logos/' + slug + '.' + EXTS[i];
+    })(0);
+  });
+})();
+</script>
+
+</body>
+</html>
