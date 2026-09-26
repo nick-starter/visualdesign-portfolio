@@ -15,8 +15,6 @@ wordmark, so add them one at a time.
   bupa               Bupa
   tbwa               TBWA
   jwt                JWT
-  wcrs               WCRS
-  publicis           Publicis
 
 Examples:
   rebel-sport.svg
