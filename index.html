@@ -302,7 +302,7 @@
 <script>
 // client logos — try svg, then png/webp/jpg. Falls back to the text wordmark.
 (function(){
-  var EXTS = ['svg', 'png', 'webp', 'jpg', 'jpeg'];
+  var EXTS = ['svg', 'avif', 'png', 'webp', 'jpg', 'jpeg'];
   document.querySelectorAll('[data-logo]').forEach(function (li) {
     var slug = li.getAttribute('data-logo');
     (function tryAt (i) {
@@ -314,6 +314,9 @@
         // lazy only once it's in the document, or the load never fires
         img.loading = 'lazy';
         li.classList.add('has-img');
+        // stacked/square marks need more height to read at the same
+        // visual weight as wide wordmarks
+        if (img.naturalWidth / img.naturalHeight < 1.6) li.classList.add('is-stacked');
       };
       img.onerror = function () { tryAt(i + 1); };
       img.src = 'images/logos/' + slug + '.' + EXTS[i];

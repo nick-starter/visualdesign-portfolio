@@ -3,7 +3,7 @@ CLIENT LOGOS
 
 Drop logo files in this folder. The name only has to match the slug
 below — the extension can be svg, png, webp, jpg or jpeg, and the page
-tries each in turn. Anything missing quietly falls back to a text
+tries each in turn (svg, avif, png, webp, jpg, jpeg). Anything missing quietly falls back to a text
 wordmark, so add them one at a time.
 
   rebel-sport        Rebel Sport

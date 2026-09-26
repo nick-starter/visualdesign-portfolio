@@ -144,6 +144,7 @@ section{position:relative;padding:clamp(52px,8vw,104px) 0}
   filter:grayscale(1) contrast(1.15);opacity:.62;
   transition:opacity .2s,filter .2s;
 }
+.logos li.is-stacked img{height:clamp(26px,3vw,36px)}
 .logos li:hover img{opacity:1;filter:grayscale(0) contrast(1)}
 .logos span{
   font-family:var(--display);text-transform:uppercase;
