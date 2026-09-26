@@ -1,0 +1,36 @@
+{
+  "folders": [
+    { "path": "." }
+  ],
+  "settings": {
+    "liveServer.defaultPort": 8000,
+    "editor.wordWrap": "on",
+    "files.insertFinalNewline": true,
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[css]": {
+      "editor.suggest.autoImports": false
+    }
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Dev server (auto-reload)",
+        "type": "shell",
+        "command": "./dev.sh 8000",
+        "isBackground": true,
+        "problemMatcher": [],
+        "presentation": { "reveal": "always", "panel": "dedicated" },
+        "group": "build"
+      },
+      {
+        "label": "Push to GitHub",
+        "type": "shell",
+        "command": "git add -A && git commit -m '${input:message}' && git push origin main",
+        "problemMatcher": []
+      }
+    ]
+  }
+}
