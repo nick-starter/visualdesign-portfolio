@@ -84,16 +84,16 @@ sup.reg{font-size:.13em;vertical-align:super;color:var(--red);letter-spacing:0;m
 .hero h1{position:relative;z-index:2}
 
 .hero-obj{
-  position:absolute;z-index:3;left:50%;top:clamp(30px,7vw,74px);
-  transform:translateX(-50%) rotate(-4deg);
-  width:clamp(180px,26vw,340px);aspect-ratio:1;
+  position:absolute;z-index:3;right:clamp(4%,8vw,14%);top:clamp(26px,5.5vw,60px);
+  transform:rotate(-5deg);
+  width:clamp(120px,15vw,210px);aspect-ratio:1;
   background:linear-gradient(150deg,#ff2a2a,#c40000);
   border-radius:8px;display:grid;place-items:center;
-  box-shadow:0 30px 60px -24px rgba(190,0,0,.6);
+  box-shadow:0 24px 48px -20px rgba(190,0,0,.55);
 }
 .hero-obj span{
-  font-family:var(--display);font-size:clamp(2.4rem,8vw,5.6rem);
-  text-transform:uppercase;letter-spacing:-.04em;color:#fff;line-height:.85;
+  font-family:var(--display);font-size:clamp(1.1rem,2.6vw,2rem);
+  text-transform:uppercase;letter-spacing:-.04em;color:#fff;line-height:.88;
   text-align:center;padding:8px;
 }
 
@@ -101,11 +101,11 @@ sup.reg{font-size:.13em;vertical-align:super;color:var(--red);letter-spacing:0;m
   display:grid;grid-template-columns:1fr auto;gap:clamp(20px,3vw,48px);
   align-items:end;margin-top:clamp(26px,4vw,52px);
 }
-.hero-headline{
-  font-size:clamp(1.3rem,4.2vw,3.3rem);line-height:1.02;letter-spacing:-.025em;
-  max-width:24ch;margin-top:clamp(70px,14vw,180px);position:relative;z-index:4;
+h2.hero-headline{
+  font-size:clamp(1.05rem,2.9vw,2.35rem);line-height:1.06;letter-spacing:-.02em;
+  max-width:34ch;margin-top:clamp(56px,9vw,120px);position:relative;z-index:4;
 }
-.hero-headline .red{color:var(--red)}
+h2.hero-headline .red{color:var(--red)}
 .hero-roles{
   list-style:none;text-align:right;
   font-family:var(--display);text-transform:uppercase;
@@ -305,7 +305,7 @@ footer{background:#fff;border-top:1px solid rgba(0,0,0,.14);padding:22px 0}
   .hero-grid{grid-template-columns:1fr}
   .hero-headline{margin-top:clamp(56px,11vw,96px)}
   .hero-roles{text-align:left}
-  .hero-obj{width:clamp(150px,32vw,240px);top:clamp(20px,5vw,44px)}
+  .hero-obj{width:clamp(110px,26vw,170px);top:clamp(14px,4vw,30px);right:6%}
   .xp-row{grid-template-columns:78px 1fr;row-gap:5px}
   .xp-role{grid-column:2}
   .steps{grid-template-columns:1fr}
