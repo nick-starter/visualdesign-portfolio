@@ -168,6 +168,32 @@ section{position:relative;padding:clamp(52px,8vw,104px) 0}
   list-style:none;display:flex;flex-wrap:wrap;gap:7px;
   margin-top:clamp(26px,4vw,44px);padding-top:22px;border-top:1px solid rgba(0,0,0,.14);
 }
+
+/* client logo strip — uses real logo files when present, wordmark otherwise */
+.client-strip{margin-top:clamp(30px,4vw,52px);padding-top:24px;border-top:1px solid rgba(0,0,0,.14)}
+.client-label{display:block;margin-bottom:18px}
+.logos{
+  list-style:none;display:flex;flex-wrap:wrap;
+  gap:clamp(16px,2.6vw,38px) clamp(20px,3.4vw,48px);
+  align-items:center;
+}
+.logos li{display:flex;align-items:center;min-height:26px}
+.logos img{
+  height:clamp(18px,2vw,26px);width:auto;object-fit:contain;
+  filter:grayscale(1) contrast(1.15);opacity:.62;
+  transition:opacity .2s,filter .2s;
+}
+.logos li:hover img{opacity:1;filter:grayscale(0) contrast(1)}
+.logos span{
+  font-family:var(--display);text-transform:uppercase;
+  font-size:clamp(11px,1.45vw,17px);letter-spacing:-.03em;line-height:1;
+  color:var(--ink);opacity:.55;white-space:nowrap;
+  transition:opacity .2s,color .2s;
+}
+.logos li:hover span{opacity:1;color:var(--red)}
+/* once a real logo image loads, hide the text fallback */
+.logos li:has(img) span{display:none}
+.logos li:not(:has(img)) span{opacity:.45}
 .tool-strip li{
   font-family:var(--mono);text-transform:uppercase;letter-spacing:.13em;font-size:9.5px;
   border:1px solid rgba(0,0,0,.22);padding:6px 11px;
