@@ -1,25 +1,40 @@
 CLIENT LOGOS
 ============
 
-Drop real logo files here as PNG or SVG, then name them exactly:
+Drop logo files in this folder. The name only has to match the slug
+below — the extension can be svg, png, webp, jpg or jpeg, and the page
+tries each in turn. Anything missing quietly falls back to a text
+wordmark, so add them one at a time.
 
+  rebel-sport        Rebel Sport
+  cargo-crew         Cargo Crew
+  suzuki             Suzuki
+  langtons           Langton's
+  officeworks        Officeworks
+  telstra            Telstra
+  bupa               Bupa
+  tbwa               TBWA
+  jwt                JWT
+  wcrs               WCRS
+  publicis           Publicis
+
+Examples:
+  rebel-sport.svg
   rebel-sport.png
   cargo-crew.png
-  suzuki.png
-  langtons.png
-  officeworks.png
-  telstra.png
-  bupa.png
-  tbwa.png
-  jwt.png
-  wcrs.png
-  publicis.png
 
 Notes
 -----
-* SVG is best — stays sharp at any size and file stays small.
-* Logos are auto-rendered greyscale at 62% opacity and turn
-  full-colour + red on hover. So a dark or coloured logo both work.
-* If a file is missing the site shows a clean text wordmark instead,
-  so you can add logos one at a time without breaking the layout.
-* Recommended: transparent background, single-colour mark.
+* SVG is best — sharp at any size, small file size.
+* Otherwise use a transparent-background PNG.
+* Single-colour marks work best; logos render greyscale at 62%
+  opacity and go full-colour + red on hover.
+* Recommended height around 40-80px for SVG, or any size for PNG
+  (CSS caps the rendered height).
+
+Trademarks
+----------
+These are other companies' marks. Use them to show genuine employment
+on a personal portfolio, and strip any (R) / (TM) symbols. Don't alter
+proportions or colours. If a brand is under NDA, or your involvement
+was minor, leave it as a text wordmark instead.

@@ -152,9 +152,9 @@ section{position:relative;padding:clamp(52px,8vw,104px) 0}
   transition:opacity .2s,color .2s;
 }
 .logos li:hover span{opacity:1;color:var(--red)}
-/* once a real logo image loads, hide the text fallback */
-.logos li:has(img) span{display:none}
-.logos li:not(:has(img)) span{opacity:.45}
+/* once a real logo file loads, hide the text wordmark */
+.logos li.has-img span{display:none}
+.logos li:not(.has-img) span{opacity:.45}
 
 /* ---------- WORK — horizontal rail ---------- */
 .rail-wrap{margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad)}
