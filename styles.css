@@ -150,11 +150,6 @@ section{position:relative;padding:clamp(52px,8vw,104px) 0}
   font-family:var(--display);font-size:clamp(3rem,9vw,6.5rem);
   text-transform:uppercase;letter-spacing:-.05em;color:rgba(0,0,0,.14);
 }
-.tool-strip{
-  list-style:none;display:flex;flex-wrap:wrap;gap:7px;
-  margin-top:clamp(26px,4vw,44px);padding-top:22px;border-top:1px solid rgba(0,0,0,.14);
-}
-
 /* client logo strip — uses real logo files when present, wordmark otherwise */
 .client-strip{margin-top:clamp(30px,4vw,52px);padding-top:24px;border-top:1px solid rgba(0,0,0,.14)}
 .client-label{display:block;margin-bottom:18px}
@@ -180,10 +175,6 @@ section{position:relative;padding:clamp(52px,8vw,104px) 0}
 /* once a real logo image loads, hide the text fallback */
 .logos li:has(img) span{display:none}
 .logos li:not(:has(img)) span{opacity:.45}
-.tool-strip li{
-  font-family:var(--mono);text-transform:uppercase;letter-spacing:.13em;font-size:9.5px;
-  border:1px solid rgba(0,0,0,.22);padding:6px 11px;
-}
 
 /* ---------- WORK — horizontal rail ---------- */
 .rail-wrap{margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad)}
