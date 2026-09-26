@@ -111,15 +111,6 @@ h2.hero-headline .red{color:var(--red)}
 .btn-solid:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .btn svg{width:11px;height:11px}
 
-/* ---------- STATS ---------- */
-.stats{display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,54px);margin-top:clamp(28px,4vw,48px)}
-.stat{display:flex;align-items:baseline;gap:12px}
-.stat+.stat{border-left:1px solid rgba(0,0,0,.18);padding-left:clamp(20px,4vw,54px)}
-.stat b{
-  font-family:var(--display);font-size:clamp(1.8rem,4.6vw,3.4rem);
-  letter-spacing:-.04em;line-height:.8;color:var(--red);
-}
-.stat small{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:9.5px;max-width:12ch;line-height:1.5}
 .scroll-cue{
   display:flex;flex-direction:column;align-items:center;gap:8px;
   margin-top:clamp(34px,5vw,60px);font-family:var(--mono);
@@ -390,8 +381,6 @@ footer{background:#fff;border-top:1px solid rgba(0,0,0,.14);padding:22px 0}
   .nav-links{gap:12px}
   .nav-links a{font-size:9px;letter-spacing:.08em}
   .px-mark{display:none}
-  .stats{gap:20px}
-  .stat+.stat{padding-left:20px}
   .contact-list a{flex-direction:column;gap:4px}
   .contact-list small{min-width:0}
   .rail-item{width:74vw}
