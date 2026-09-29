@@ -81,7 +81,9 @@ sup.reg{font-size:.13em;vertical-align:super;color:var(--red);letter-spacing:0;m
 .hero{
   position:relative;overflow:hidden;
   padding:clamp(40px,6vw,80px) 0 clamp(28px,4vw,52px);
-  border:var(--frame) solid #fff;
+  border-left:var(--frame) solid #fff;
+  border-right:var(--frame) solid #fff;
+  border-bottom:var(--frame) solid #fff;
 }
 /* the frame takes 32px off each side — pad the wrap back so the content holds its position */
 .hero .wrap{padding-left:calc(var(--pad) + var(--frame));padding-right:calc(var(--pad) + var(--frame))}
