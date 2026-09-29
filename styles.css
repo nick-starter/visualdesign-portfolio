@@ -12,6 +12,7 @@
   --display:"Archivo Black","Archivo","Helvetica Neue",Arial,sans-serif;
   --pad:clamp(18px,4.5vw,64px);
   --maxw:1500px;
+  --frame:32px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -77,7 +78,13 @@ sup.reg{font-size:.13em;vertical-align:super;color:var(--red);letter-spacing:0;m
 .px-mark::after{left:6px;top:0;width:4px;height:16px}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;padding:clamp(40px,6vw,80px) 0 clamp(28px,4vw,52px);overflow:hidden}
+.hero{
+  position:relative;overflow:hidden;
+  padding:clamp(40px,6vw,80px) 0 clamp(28px,4vw,52px);
+  border:var(--frame) solid #fff;
+}
+/* the frame takes 32px off each side — pad the wrap back so the content holds its position */
+.hero .wrap{padding-left:calc(var(--pad) + var(--frame));padding-right:calc(var(--pad) + var(--frame))}
 .hero h1{position:relative;z-index:2}
 
 h2.hero-headline{
